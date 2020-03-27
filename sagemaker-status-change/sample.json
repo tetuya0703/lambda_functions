@@ -1,0 +1,68 @@
+{
+    "version": "0",
+    "id": "3824bb06-cc1b-93a1-0b09-2c89db33236e",
+    "detail-type": "SageMaker Training Job State Change",
+    "source": "aws.sagemaker",
+    "account": "533155507761",
+    "time": "2019-09-10T09:41:23Z",
+    "region": "us-west-2",
+    "resources": [
+        "arn:aws:sagemaker:us-west-2:533155507761:training-job/ocr-sagemaker-demo-2019-09-10-09-40-34-623"
+    ],
+    "detail": {
+        "TrainingJobName": "ocr-sagemaker-demo-2019-09-10-09-40-34-623",
+        "TrainingJobArn": "arn:aws:sagemaker:us-west-2:533155507761:training-job/ocr-sagemaker-demo-2019-09-10-09-40-34-623",
+        "TrainingJobStatus": "InProgress",
+        "SecondaryStatus": "Starting",
+        "HyperParameters": {
+            "sagemaker_container_log_level": "20",
+            "ngrok_authtoken": "1222222222222",
+            "sagemaker_program": "\"main.py\"",
+            "sagemaker_enable_cloudwatch_metrics": "false",
+            "sagemaker_region": "\"us-west-2\"",
+            "sagemaker_job_name": "\"ocr-sagemaker-demo-2019-09-10-09-40-34-623\"",
+            "sagemaker_submit_directory": "\"s3://rnd-ocr/tyler/cannet/source/ocr-sagemaker-demo-2019-09-10-09-40-34-623/source/sourcedir.tar.gz\"",
+            "config": "\"sagemaker_config.ini\""
+        },
+        "AlgorithmSpecification": {
+            "TrainingImage": "520713654638.dkr.ecr.us-west-2.amazonaws.com/sagemaker-pytorch:1.0.0-gpu-py3",
+            "TrainingInputMode": "FILE"
+        },
+        "RoleArn": "arn:aws:iam::533155507761:role/service-role/AmazonSageMaker-ExecutionRole-20190312T160681",
+        "InputDataConfig": [
+            {
+                "ChannelName": "train",
+                "DataSource": {
+                    "S3DataSource": {
+                        "S3DataType": "S3_PREFIX",
+                        "S3Uri": "s3://rnd-ocr/tyler/data",
+                        "S3DataDistributionType": "FULLY_REPLICATED"
+                    }
+                },
+                "CompressionType": "NONE",
+                "RecordWrapperType": "NONE"
+            }
+        ],
+        "OutputDataConfig": {
+            "S3OutputPath": "s3://rnd-ocr/tyler/cannet/output/"
+        },
+        "ResourceConfig": {
+            "InstanceType": "ml.p2.xlarge",
+            "InstanceCount": 1.0,
+            "VolumeSizeInGB": 30.0
+        },
+        "StoppingCondition": {
+            "MaxRuntimeInSeconds": 432000.0
+        },
+        "CreationTime": 1568108479877.0,
+        "LastModifiedTime": 1568108479877.0,
+        "SecondaryStatusTransitions": [
+            {
+                "Status": "Starting",
+                "StartTime": 1568108479877.0,
+                "StatusMessage": "Starting the training job"
+            }
+        ],
+        "Tags": {}
+    }
+}
